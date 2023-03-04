@@ -1,0 +1,76 @@
+version: "3.8"
+
+services:
+  web-app:
+    image: saga:web-app-1.0
+    build:
+      context: .
+      dockerfile: SagaLearning.WebApp/Dockerfile
+    ports:
+      - target: 80
+        published: 8000
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - OrderApiBaseUrl=http://order-api
+      - AccountApiBaseUrl=http://account-api
+      - PaymentApiBaseUrl=http://payment-api
+    depends_on:
+      - kafka
+
+  order-api:
+    image: saga:order-api-1.0
+    build:
+      context: .
+      dockerfile: SagaLearning.OrderApi/Dockerfile
+    ports:
+      - target: 80
+        published: 8001
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - KafkaService__Servers=kafka:29092
+    depends_on:
+      - kafka
+
+  account-api:
+    image: saga:account-api-1.0
+    build:
+      context: .
+      dockerfile: SagaLearning.AccountApi/Dockerfile
+    ports:
+      - target: 80
+        published: 8002
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - KafkaService__Servers=kafka:29092
+    depends_on:
+      - kafka
+
+  payment-api:
+    image: saga:payment-api-1.0
+    build:
+      context: .
+      dockerfile: SagaLearning.PaymentApi/Dockerfile
+    ports:
+      - target: 80
+        published: 8003
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - KafkaService__Servers=kafka:29092
+    depends_on:
+      - kafka
+
+  kafka:
+    image: saga:simple-kafka-linux-1.0
+    build:
+      context: .
+      dockerfile: misc/kafka/Dockerfile
+    volumes:
+      - ./misc/kafka/config:/kafka/config-override
+      - ./misc/kafka/scripts:/kafka/scripts
+    ports:
+      - target: 9092
+        published: 9092
+  
+networks:
+  default:
+    name: saga-shared-network

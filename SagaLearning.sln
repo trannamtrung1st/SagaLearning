@@ -3,7 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SagaLearning", "SagaLearning\SagaLearning.csproj", "{E8875CAE-DAE5-4882-8DEB-C14356EB8468}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaLearning", "SagaLearning\SagaLearning.csproj", "{E8875CAE-DAE5-4882-8DEB-C14356EB8468}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaLearning.WebApp", "SagaLearning.WebApp\SagaLearning.WebApp.csproj", "{34508A1F-34A0-4982-93C9-C21A1CEDF7D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaLearning.OrderApi", "SagaLearning.OrderApi\SagaLearning.OrderApi.csproj", "{ABA78956-8DC5-484F-BF0D-BEF7FD81B426}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45069585-0877-4693-993C-A7D8C4D90F3A}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaLearning.AccountApi", "SagaLearning.AccountApi\SagaLearning.AccountApi.csproj", "{B059A669-636F-4E46-8E30-6D43FC1FA861}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SagaLearning.PaymentApi", "SagaLearning.PaymentApi\SagaLearning.PaymentApi.csproj", "{75CD5B87-4CEF-4A57-AF17-CFC768ED3BD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +28,22 @@ Global
 		{E8875CAE-DAE5-4882-8DEB-C14356EB8468}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8875CAE-DAE5-4882-8DEB-C14356EB8468}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8875CAE-DAE5-4882-8DEB-C14356EB8468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34508A1F-34A0-4982-93C9-C21A1CEDF7D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34508A1F-34A0-4982-93C9-C21A1CEDF7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34508A1F-34A0-4982-93C9-C21A1CEDF7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34508A1F-34A0-4982-93C9-C21A1CEDF7D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA78956-8DC5-484F-BF0D-BEF7FD81B426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA78956-8DC5-484F-BF0D-BEF7FD81B426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA78956-8DC5-484F-BF0D-BEF7FD81B426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA78956-8DC5-484F-BF0D-BEF7FD81B426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B059A669-636F-4E46-8E30-6D43FC1FA861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B059A669-636F-4E46-8E30-6D43FC1FA861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B059A669-636F-4E46-8E30-6D43FC1FA861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B059A669-636F-4E46-8E30-6D43FC1FA861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75CD5B87-4CEF-4A57-AF17-CFC768ED3BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75CD5B87-4CEF-4A57-AF17-CFC768ED3BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75CD5B87-4CEF-4A57-AF17-CFC768ED3BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75CD5B87-4CEF-4A57-AF17-CFC768ED3BD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
